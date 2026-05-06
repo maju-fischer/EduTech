@@ -86,6 +86,44 @@ public class Main {
                     break;
                 case 3:
 
+
+                    double valorTotal;
+                    double valorPago;
+
+                    System.out.print("Digite o valor total da compra: ");
+                    while (!scanner.hasNextDouble()) {
+                        System.out.println("Digite um valor válido:");
+                        scanner.next();
+                    }
+                    valorTotal = scanner.nextDouble();
+
+                    if (valorTotal <= 0) {
+                        System.out.println("Valor deve ser maior que zero!");
+                        break;
+                    }
+
+                    do {
+                        System.out.print("Digite o valor pago pelo cliente: ");
+
+                        while (!scanner.hasNextDouble()) {
+                            System.out.println("Digite um valor válido:");
+                            scanner.next();
+                        }
+
+                        valorPago = scanner.nextDouble();
+
+                        if (valorPago <= 0) {
+                            System.out.println("Valor inválido!");
+                        } else if (valorPago < valorTotal) {
+                            System.out.println("Valor insuficiente!");
+                        }
+
+                    } while (valorPago <= 0 || valorPago < valorTotal);
+
+                    double troco = valorPago - valorTotal;
+                    System.out.printf("Troco a devolver: R$ %.2f\n", troco);
+                    break;
+
                 case 4:
 
                 case 0:
