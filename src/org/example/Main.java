@@ -179,8 +179,17 @@ public class Main {
                     double troco = valorPago - valorTotal;
                     System.out.printf("Troco a devolver: R$ %.2f\n", troco);
                     break;
-
+                    
                 case 4:
+                    int i = (int) (Math.random() *  nomes.length);
+                    double precoOriginal = precos[i - 1];
+                    double desconto = precoOriginal * 0.20;
+                    double precoFinal = precoOriginal - desconto;
+
+                    System.out.println("====== PROMOÇÃO DO DIA - 20% DE DESCONTO ======");
+                    System.out.println("O item sorteado do dia é: " + nomes[i - 1] + " — com 20% de desconto!");
+                    System.out.printf("Preço com desconto: R$ %.2f", precoFinal);
+                    break;
 
                 case 0:
                     System.out.println("Encerrando o sistema...");
